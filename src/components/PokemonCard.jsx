@@ -49,7 +49,7 @@ export const PokemonCard = ({addPokemon}) => {
   return (
     <>
         {MOCK_DATA.map((pokemon) => {
-            const { id, img_url, korean_name, types } = pokemon;
+            const { id, img_url, korean_name, } = pokemon;
             return (
                 <Card key={id}>
                     <img src={img_url} alt = {korean_name} 이미지 />

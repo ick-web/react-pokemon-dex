@@ -8,7 +8,7 @@ export const PokemonDetail = () => {
   const details = MOCK_DATA.find((detail) => detail.id === +paramsId)
   const navigate = useNavigate();
   console.log(typeof details.id)
-  console.log(details)
+  console.log(id)
   return (
     <div>
       <img src={details.img_url} alt={details.korean_name} />
