@@ -1,8 +1,21 @@
-# React + Vite
+# 포켓몬 도감 📒
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[React 9기] React 숙련주차 개인과제 포켓몬 도감 프로젝트 입니다.
 
-Currently, two official plugins are available:
+### 기능
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### 원하는 포켓몬 추가
+
+- 원하는 포켓몬을 추가 버튼을 이용해 추가 할 수 있습니다.
+
+#### 상세정보 보기
+
+- 원하는 포켓몬의 상세정보를 눌러서 볼 수 있습니다.
+
+#### 포켓몬 삭제
+
+- 삭제를 원하는 포켓몬을 삭제버튼을 눌러 삭제 할 수 있습니다.
+
+회고
+
+- 이프로젝트를 진행하면서 props와 QueryString에 대해서 좀더 이해를 하게 되었습니다.
