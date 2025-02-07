@@ -17,17 +17,21 @@ export const Dex = () => {
   const addPokemon = (pokemon) => {
     if (pokemonList.length >= 6) {
       alert(" 포켓몬은 6개까지만 선택가능합니다.");
-    } else if (
+      return;
+    }
+    if (
       pokemonList.some((prevPokemon) => prevPokemon.id === pokemon.id)
     ) {
       alert("이미 존재하는 포켓몬입니다.");
-    } else {
+      return;
+    }
+    
       setPokemonList((prevSelected) => [...prevSelected, pokemon]);
       localStorage.setItem(
         "pokemon",
         JSON.stringify([...pokemonList, pokemon])
       );
-    }
+    
   };
 
   //포켓몬 삭제
