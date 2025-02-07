@@ -48,7 +48,7 @@ const AddBtn = styled.button`
   width: 50px;
   margin: 10px auto;
   &:hover {
-    background-color: #d33030;
+    opacity:0.8;
   }
 `;
 

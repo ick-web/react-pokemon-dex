@@ -1,11 +1,17 @@
-import React from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MOCK_DATA from "../API/MOCK_DATA";
 import Dashboard from "../components/Dashboard";
 import PokemonList from "../components/PokemonList";
 
 export const Dex = () => {
-  const [pokemonList, setPokemonLIst] = useState([]);
+  const [pokemonList, setPokemonList] = useState([]);
+
+  useEffect(() => {
+    const savedPokemon = localStorage.getItem("pokemon");
+    if (savedPokemon) {
+      setPokemonList(JSON.parse(savedPokemon));
+    }
+  }, []);
 
   //포켓몬 추가
   const addPokemon = (pokemon) => {
@@ -16,22 +22,28 @@ export const Dex = () => {
     ) {
       alert("이미 존재하는 포켓몬입니다.");
     } else {
-      setPokemonLIst((prevSelected) => [...prevSelected, pokemon]);
+      setPokemonList((prevSelected) => [...prevSelected, pokemon]);
+      localStorage.setItem(
+        "pokemon",
+        JSON.stringify([...pokemonList, pokemon])
+      );
     }
   };
 
   //포켓몬 삭제
   const removePokemon = (pokemon) => {
-    setPokemonLIst((prevSelected) =>
-      prevSelected.filter((prevPokemon) => prevPokemon.id !== pokemon.id)
+    const updatedList = pokemonList.filter(
+      (prevPokemon) => prevPokemon.id !== pokemon.id
     );
+    setPokemonList(updatedList);
+    localStorage.setItem("pokemon", JSON.stringify(updatedList));
   };
 
   return (
     <div>
       <Dashboard pokemonList={pokemonList} removePokemon={removePokemon} />
 
-      <PokemonList PokemonList={MOCK_DATA} addPokemon={addPokemon} />
+      <PokemonList pokemonList={MOCK_DATA} addPokemon={addPokemon} />
     </div>
   );
 };

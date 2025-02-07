@@ -60,7 +60,7 @@ const DeleteBtn = styled.button`
   cursor: pointer;
   width: 50px;
   &:hover{
-        background-color: #d33030;
+    opacity:0.8;;
     }
 `;
 
