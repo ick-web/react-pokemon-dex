@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import MOCK_DATA from "../API/MOCK_DATA";
+import { usePokemon } from "../context/PokemonContext";
 
 const Card = styled.div`
   display: flex;
@@ -52,7 +53,8 @@ const AddBtn = styled.button`
   }
 `;
 
-export const PokemonCard = ({ addPokemon }) => {
+export const PokemonCard = () => {
+  const { addPokemon } = usePokemon();
   return (
     <>
       {MOCK_DATA.map((pokemon) => {

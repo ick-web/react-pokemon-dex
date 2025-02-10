@@ -18,4 +18,5 @@
 
 회고
 
-- 이프로젝트를 진행하면서 props와 QueryString에 대해서 좀더 이해를 하게 되었습니다.
+- 이프로젝트를 진행하면서 React의 prop drilling과 Context API에 대해서 좀더 이해를 하게 되었습니다.
+- React-router-dom을 활용한 라우팅 구현 방식을 경험해 보았습니다.

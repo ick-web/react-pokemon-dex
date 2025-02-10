@@ -13,14 +13,10 @@ const Div = styled.div`
   background-color: #efefef;
 `;
 
-export const PokemonList = ({ PokemonList, setPokemonList, addPokemon }) => {
+export const PokemonList = () => {
   return (
     <Div>
-      <PokemonCard
-        PokemonList={PokemonList}
-        setPokemonList={setPokemonList}
-        addPokemon={addPokemon}
-      />
+      <PokemonCard/>
     </Div>
   );
 };

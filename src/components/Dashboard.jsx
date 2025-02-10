@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import PokeBall from "../assets/pokeball.png";
 import pokemonLogo from "../assets/pokemon-logo.png";
+import { usePokemon } from "../context/PokemonContext";
 
 const Div = styled.div`
   display: flex;
@@ -80,7 +81,8 @@ const CardWrapper = styled.div`
 
 `
 
-export const Dashboard = ({ pokemonList, removePokemon }) => {
+export const Dashboard = () => {
+  const { pokemonList, removePokemon } = usePokemon();
   const navigate = useNavigate();
   return (
     <Div>
