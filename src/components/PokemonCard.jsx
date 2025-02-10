@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import styled from "styled-components";
 import MOCK_DATA from "../API/MOCK_DATA";
 import { usePokemon } from "../context/PokemonContext";
@@ -53,6 +54,8 @@ const AddBtn = styled.button`
   }
 `;
 
+
+
 export const PokemonCard = () => {
   const { addPokemon } = usePokemon();
   return (
@@ -71,6 +74,7 @@ export const PokemonCard = () => {
               <span>상세 정보</span>
             </Link>
             <AddBtn onClick={() => addPokemon(pokemon)}>추가</AddBtn>
+            <ToastContainer position="top-center" autoClose={2000} theme="light" />
           </Card>
         );
       })}

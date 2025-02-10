@@ -2,29 +2,45 @@ import React from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import styled from "styled-components";
 import MOCK_DATA from "../API/MOCK_DATA";
+import { usePokemon } from "../context/PokemonContext";
 
 export const PokemonDetail = () => {
+  const { pokemonList, addPokemon, removePokemon } = usePokemon();
   // query string 값 가져오기
   const [searchParam] = useSearchParams();
   const queryId = searchParam.get("id");
   const details = MOCK_DATA.find((detail) => detail.id === +queryId);
   const navigate = useNavigate();
+
+  const isPokemonAdded = pokemonList.some(
+    (pokemon) => pokemon.id === details.id
+  );
+
   return (
-    <DetailWrapper>
+    <>
       <DetailContainer>
         <img src={details.img_url} alt={details.korean_name} />
         <h1>{details.korean_name}</h1>
         <p> {"타입: " + details.types}</p>
         <p>{details.description}</p>
         <button onClick={() => navigate("/Dex")}>뒤로 가기</button>
+
+        {/* 상태에 따라 버튼변경 */}
+        {isPokemonAdded ? (
+          <button
+            onClick={() => removePokemon(details)}
+            style={{ backgroundColor: "#ff4033", color: "white" }}
+          >
+            삭제
+          </button>
+        ) : (
+          <button onClick={() => addPokemon(details)}>추가</button>
+        )}
       </DetailContainer>
-    </DetailWrapper>
+    </>
   );
 };
 
-const DetailWrapper = styled.div`
-  /* background-color: #ffe4b8; */
-`;
 
 const DetailContainer = styled.div`
   display: flex;

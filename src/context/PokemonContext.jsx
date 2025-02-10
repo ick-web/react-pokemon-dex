@@ -1,4 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const PokemonContext = createContext();
 
@@ -19,11 +21,11 @@ export const PokemonProvider = ({ children }) => {
   //포켓몬 추가
   const addPokemon = (pokemon) => {
     if (pokemonList.length >= 6) {
-      alert(" 포켓몬은 6개까지만 선택가능합니다.");
+      toast(" 포켓몬은 6개까지만 선택가능합니다.");
       return;
     }
     if (pokemonList.some((prevPokemon) => prevPokemon.id === pokemon.id)) {
-      alert("이미 존재하는 포켓몬입니다.");
+      toast("이미 존재하는 포켓몬입니다.");
       return;
     }
 
