@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import PokemonCard from "./pokemonCard";
+import PokemonCard from "./PokemonCard";
 
 const Div = styled.div`
   margin-top: 32px;
@@ -16,7 +16,7 @@ const Div = styled.div`
 export const PokemonList = () => {
   return (
     <Div>
-      <PokemonCard/>
+      <PokemonCard />
     </Div>
   );
 };
