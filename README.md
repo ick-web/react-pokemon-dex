@@ -3,7 +3,7 @@
 [React 9기] React 숙련주차 개인과제 포켓몬 도감 프로젝트 입니다.
 
 <img width="600" alt="스크린샷 2025-02-10 오후 2 53 00" src="https://github.com/user-attachments/assets/da2f924c-b83b-4bd4-be7c-42e758ec0447" />
-<img width="600" alt="스크린샷 2025-02-10 오후 2 54 17" src="https://github.com/user-attachments/assets/e8e23998-a748-4e76-9a85-ed4db3d73364" />
+<img width="600" alt="스크린샷 2025-02-10 오후 3 32 45" src="https://github.com/user-attachments/assets/bd9b4dcd-7997-450e-be2a-8532219e050a" />
 <img width="600" alt="스크린샷 2025-02-10 오후 2 54 44" src="https://github.com/user-attachments/assets/2224fc4e-3efd-41e1-a344-63be3f674035" />
 
 
