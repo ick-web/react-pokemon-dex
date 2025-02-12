@@ -50,11 +50,17 @@ const AddBtn = styled.button`
   width: 50px;
   margin: 10px auto;
   &:hover {
-    opacity:0.8;
+    opacity: 0.8;
   }
 `;
 
-
+const DetailLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+  &:hover {
+    color: #3367b0;
+  }
+`;
 
 export const PokemonCard = () => {
   const { addPokemon } = usePokemon();
@@ -67,14 +73,16 @@ export const PokemonCard = () => {
             <img src={img_url} alt={korean_name} />
             <H1>{korean_name}</H1>
             <p>No. {id}</p>
-            <Link
-              to={`/PokemonDetail?id=${id}`}
-              style={{ textDecoration: "none", color: "black" }}
-            >
+            <DetailLink
+              to={`/PokemonDetail?id=${id}`}>
               <span>상세 정보</span>
-            </Link>
+            </DetailLink>
             <AddBtn onClick={() => addPokemon(pokemon)}>추가</AddBtn>
-            <ToastContainer position="top-center" autoClose={2000} theme="light" />
+            <ToastContainer
+              position="top-center"
+              autoClose={2000}
+              theme="light"
+            />
           </Card>
         );
       })}
